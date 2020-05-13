@@ -33,6 +33,7 @@ public class Test {
         for (Parent parent : socialPeopleList) {
             jobSet.add(parent.getJob());
         }
+        //Set 适合去重
         System.out.println(jobSet);System.out.println();
 
         //初始化老师
@@ -45,6 +46,7 @@ public class Test {
         teacherMap.put("体育老师",PETeacher);
         System.out.println("晴天----"+teacherMap); System.out.println();
 
+        //Map key不能重复，新增重复key则覆盖
         teacherMap.put("数学老师",PETeacher);
         System.out.println("雨天----"+teacherMap); System.out.println();
 
