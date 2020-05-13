@@ -1,6 +1,6 @@
 package pojo;
 
-//校外人员
+//父母
 public class Parent extends People{
     private String job;
 
