@@ -1,7 +1,7 @@
 package pojo;
 
 
-import service.Speak;
+import interfaces.Speak;
 
 //学生类，实现Speak、Comparable
 public class Student extends People implements Speak,Comparable<Student> {

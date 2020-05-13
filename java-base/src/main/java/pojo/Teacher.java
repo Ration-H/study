@@ -1,6 +1,6 @@
 package pojo;
 
-import service.Speak;
+import interfaces.Speak;
 
 //老师类，实现Speak接口
 public class Teacher extends People implements Speak {
