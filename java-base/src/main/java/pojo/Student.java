@@ -14,7 +14,7 @@ public class Student extends People implements Speak,Comparable<Student> {
 
     @Override
     public void say() {
-        System.out.println("老师好");
+        System.out.println(this.getName()+":老师好");
     }
 
     @Override

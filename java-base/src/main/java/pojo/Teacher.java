@@ -28,6 +28,6 @@ public class Teacher extends People implements Speak {
 
     @Override
     public void say() {
-        System.out.println("上课");
+        System.out.println(this.getName()+":上课");
     }
 }

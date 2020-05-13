@@ -52,5 +52,8 @@ public class Test {
         Collections.sort(studentList);
         System.out.println(studentList);
 
+        teacherMap.get("数学老师").say();
+        studentList.get(0).say();
+
     }
 }
