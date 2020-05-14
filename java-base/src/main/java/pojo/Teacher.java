@@ -1,9 +1,7 @@
 package pojo;
 
-import interfaces.Speak;
-
 //老师类，实现Speak接口
-public class Teacher extends People implements Speak {
+public class Teacher extends People{
     private Double salary;
 
     public Teacher(String name, Integer age, Double salary) {
@@ -24,10 +22,5 @@ public class Teacher extends People implements Speak {
         return "Teacher{" +super.toString()+
                 "salary=" + salary +
                 '}';
-    }
-
-    @Override
-    public void say() {
-        System.out.println(this.getName()+":上课");
     }
 }

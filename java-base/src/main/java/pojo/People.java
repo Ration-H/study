@@ -1,6 +1,5 @@
 package pojo;
 
-//校内人员
 public abstract class People {
     private String name;
     private Integer age;

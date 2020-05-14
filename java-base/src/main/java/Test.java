@@ -13,13 +13,23 @@ public class Test {
         Map<String, Teacher> teacherMap=new HashMap<String, Teacher>();
         //父母集合
         List<Parent> socialPeopleList=new ArrayList<Parent>();
-
+        //
+        Queue<Student> studentQueue=new ArrayDeque<>();
         for (int i=0;i<10;i++){//添加10个学生
             studentList.add(new Student((char)(65+i)+"",18,(int) (Math.random()*100)));
         }
 
-        System.out.println(studentList); System.out.println();
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
+        System.out.println("-----------------------------");
 
+        //排序
+        Collections.sort(studentList);
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
+        System.out.println();
 
         //添加父母
         socialPeopleList.add(new Parent("A爸",45,"工程师"));
@@ -38,24 +48,25 @@ public class Test {
 
         //初始化老师
         Teacher chineseTeacher=new Teacher("Chinese",30,10000.00);
-        Teacher mathTeacher=new Teacher("Math",30,10000.00);
+        Teacher mathTeacher=new Teacher("Math",30,12000.00);
         Teacher PETeacher=new Teacher("PE",30,8000.00);
         //添加老师
         teacherMap.put("语文老师",chineseTeacher);
         teacherMap.put("数学老师",mathTeacher);
         teacherMap.put("体育老师",PETeacher);
-        System.out.println("晴天----"+teacherMap); System.out.println();
+        Iterator<Map.Entry<String, Teacher>> iterator = teacherMap.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry<String, Teacher> tempTeacher = iterator.next();
+            System.out.println(tempTeacher.getKey()+": "+tempTeacher.getValue());
+        }
+        System.out.println("------------------------");
 
         //Map key不能重复，新增重复key则覆盖
         teacherMap.put("数学老师",PETeacher);
-        System.out.println("雨天----"+teacherMap); System.out.println();
-
-        //学生成绩排名
-        Collections.sort(studentList);
-        System.out.println(studentList);
-
-        teacherMap.get("数学老师").say();
-        studentList.get(0).say();
-
+        iterator = teacherMap.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry<String, Teacher> tempTeacher = iterator.next();
+            System.out.println(tempTeacher.getKey()+": "+tempTeacher.getValue());
+        }
     }
 }

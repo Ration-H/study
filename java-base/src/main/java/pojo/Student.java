@@ -1,20 +1,13 @@
 package pojo;
 
 
-import interfaces.Speak;
-
 //学生类，实现Speak、Comparable
-public class Student extends People implements Speak,Comparable<Student> {
+public class Student extends People implements Comparable<Student> {
     private Integer score;
 
     public Student(String name, Integer age, Integer score) {
         super(name, age);
         this.score = score;
-    }
-
-    @Override
-    public void say() {
-        System.out.println(this.getName()+":老师好");
     }
 
     @Override

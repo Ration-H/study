@@ -1,5 +1,6 @@
 import common.MyEnum;
 import common.MyException;
+import org.junit.Test;
 import pojo.Student;
 
 import java.io.FileNotFoundException;
@@ -7,9 +8,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+public class Test2 {
 
-    @org.junit.Test//Checked Exception，必须处理
+    @Test//Checked Exception，必须处理
     public void Test2() {
         try {
             FileReader fileReader = new FileReader("d:/a.txt");
@@ -18,7 +19,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test//Runtime Exception
+    @Test//Runtime Exception
     public void Test3() {
         List<Student> studentList = new ArrayList<Student>();
         studentList.add(null);
@@ -29,7 +30,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test//自定义异常
+    @Test//自定义异常
     public void Test4() {
         List<Student> studentList = new ArrayList<Student>();
         Student student = new Student("A", 20, 10);
