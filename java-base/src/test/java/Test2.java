@@ -25,7 +25,7 @@ public class Test2 {
         studentList.add(null);
         try {
             studentList.get(0).getScore();
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             e.printStackTrace();
         }
     }
@@ -33,10 +33,10 @@ public class Test2 {
     @Test//自定义异常
     public void Test4() {
         List<Student> studentList = new ArrayList<Student>();
-        Student student = new Student("A", 20, -10);
+        Student student = new Student("A", 20, 10);
 
         try {
-            if(student.getScore()<0){//成绩异常
+            if(student!=null&&student.getScore()<0){//成绩异常
             throw new MyException(MyEnum.DATA_EXCEPTION);
             }
             studentList.add(student);
@@ -44,7 +44,7 @@ public class Test2 {
 
         } catch (MyException e) {
             e.printStackTrace();
-            System.out.println("状态码："+e.getMyEnum().getCode()+" 错误信息："+e.getMyEnum().getMessage());
+            System.out.println("状态码："+e.getMyEnum().getCode()+" 异常原因："+e.getMyEnum().getMessage());
         }catch (Exception e){
             e.printStackTrace();
         }

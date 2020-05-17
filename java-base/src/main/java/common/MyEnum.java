@@ -1,6 +1,6 @@
 package common;
 
-public enum MyEnum {
+public enum MyEnum{
     DATA_EXCEPTION (10100,"成绩异常");
 
     private int code;

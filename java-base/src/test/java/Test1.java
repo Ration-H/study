@@ -10,6 +10,7 @@ public class Test1 {
     public void listTest(){
         //学生集合
         List<Student> studentList=new ArrayList<Student>();
+
         for (int i=0;i<10;i++){//添加10个学生
             studentList.add(new Student((char)(65+i)+"",18,(int) (Math.random()*100)));
         }
@@ -18,10 +19,24 @@ public class Test1 {
         for (Student student : studentList) {
             System.out.println(student);
         }
-        System.out.println("-----------------------------");
+        System.out.println("-------------排序-------------");
 
         //排序
         Collections.sort(studentList);
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
+
+        System.out.println("-----------移除一个----------");
+        //移除一个
+        studentList.remove(0);
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
+
+        System.out.println("-----------清除全部-----------");
+        //清除全部
+        studentList.clear();
         for (Student student : studentList) {
             System.out.println(student);
         }
@@ -39,15 +54,25 @@ public class Test1 {
             System.out.println(student);
         }
 
-        System.out.println();
+        System.out.println("-----------get()方法-----------");
         //get类似单纯的查询
-        System.out.println(((ArrayDeque<Student>) studentQueue).getFirst());
-        System.out.println(((ArrayDeque<Student>) studentQueue).getFirst());
+        System.out.println("getFirst:  "+((ArrayDeque<Student>) studentQueue).getFirst());
+        System.out.println("getFirst:  "+((ArrayDeque<Student>) studentQueue).getFirst());
+        System.out.println("getLast :  "+((ArrayDeque<Student>) studentQueue).getLast());
+        System.out.println("getLast :  "+((ArrayDeque<Student>) studentQueue).getLast());
+
+        System.out.println("-----------poll()方法-----------");
+        //poll查询并删除
+        System.out.println("pollFirst:  "+((ArrayDeque<Student>) studentQueue).pollFirst());
+        System.out.println("pollFirst:  "+((ArrayDeque<Student>) studentQueue).pollFirst());
+        System.out.println("pollLast :  "+((ArrayDeque<Student>) studentQueue).pollLast());
+        System.out.println("pollLast :  "+((ArrayDeque<Student>) studentQueue).pollLast());
 
         System.out.println();
-        //poll查询并删除
-        System.out.println(((ArrayDeque<Student>) studentQueue).pollFirst());
-        System.out.println(((ArrayDeque<Student>) studentQueue).pollFirst());
+        System.out.println("-----------poll后输出-----------");
+        for (Student student : studentQueue) {
+            System.out.println(student);
+        }
     }
 
     @Test
@@ -60,10 +85,11 @@ public class Test1 {
         Teacher chineseTeacher=new Teacher("Chinese",30,10000.00);
         Teacher mathTeacher=new Teacher("Math",30,12000.00);
         Teacher englishTeacher=new Teacher("English",30,8000.00);
-        //添加老师
+        //HashMap添加老师
         teacherMap.put("语文老师",chineseTeacher);
         teacherMap.put("数学老师",mathTeacher);
         teacherMap.put("英语老师",englishTeacher);
+        //LinkedHashMap添加老师
         teacherLinkedMap.put("语文老师",chineseTeacher);
         teacherLinkedMap.put("数学老师",mathTeacher);
         teacherLinkedMap.put("英语老师",englishTeacher);
@@ -81,8 +107,8 @@ public class Test1 {
             Map.Entry<String, Teacher> tempTeacher = iteratorLinkedMap.next();
             System.out.println(tempTeacher.getKey()+": "+tempTeacher.getValue());
         }
-        System.out.println("-----添加重复值后遍历结果-----");
 
+        System.out.println("-----添加重复key后遍历结果-----");
         //Map key不能重复，新增重复key则覆盖
         teacherMap.put("数学老师",englishTeacher);
         iterator = teacherMap.entrySet().iterator();

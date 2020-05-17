@@ -30,7 +30,10 @@
 		* IOException
 		* ClassNotFoundException 
 		* RuntimeException   
-			*NullPointerException 
+				NullPointerException
+			    ClassCastException 
+				ArithmeticException 
+				IndexOutOfBoundsException
 
 
 <br>
