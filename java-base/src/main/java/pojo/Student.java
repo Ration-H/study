@@ -1,7 +1,7 @@
 package pojo;
 
 
-//学生类，实现Speak、Comparable
+//学生类，实现Comparable
 public class Student extends People implements Comparable<Student> {
     private Integer score;
 

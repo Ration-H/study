@@ -1,6 +1,6 @@
 package pojo;
 
-//老师类，实现Speak接口
+//老师类
 public class Teacher extends People{
     private Double salary;
 
