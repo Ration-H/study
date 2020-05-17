@@ -32,7 +32,7 @@
 		* RuntimeException   
 				NullPointerException  
 			    ClassCastException  
-				ArithmeticException   
+				ArithmeticException    
 				IndexOutOfBoundsException  
 
 
